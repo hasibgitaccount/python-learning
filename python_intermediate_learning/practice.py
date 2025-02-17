@@ -78,3 +78,11 @@ print(list3)'''
 list3_copy3.append('banana')
 print(list3_copy3)
 print(list3)'''
+
+# LIST COMPREHENSION
+# its an elegant and fast way to create a new list from an existing list with one line.
+
+'''normarl_list = [10,22,33]
+list_comprehension = [i*i for i in normarl_list]
+print(normarl_list)
+print(list_comprehension)'''
