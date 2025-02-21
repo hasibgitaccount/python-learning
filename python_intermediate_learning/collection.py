@@ -13,4 +13,18 @@ from collections import Counter
 
 example = 'aaaaaabbbbbbcccccc'
 my_counter = Counter(example)
-print(my_counter)
+'''print(my_counter) '''# so it basically counted how many times a element is in a variable.
+# like any other normal dictionary we can look at the items , keys, values etc.
+'''print(my_counter.items())
+print(my_counter.keys())
+print(my_counter.values())
+
+'''
+'''print(my_counter.most_common(2)) # it will show you upto your last number of elments . if 2 then first 2 elements. btw it is wrapped by a list with a tuple inside. to reach more inside we can use indexing.
+print(my_counter.most_common(1)[0])
+print(my_counter.most_common(1)[0][0]) # here a is the most common element in our string.
+print(my_counter.most_common(1)[0][1])'''
+# we can also convert all the elelment inside to a list. using list element method.
+'''print(list(my_counter.elements()))'''
+
+# NAMEDTUPLE
