@@ -44,6 +44,16 @@ c_wr = combinations_with_replacement(a, 2)
 '''print(list(c_wr))'''
 
 # ACCUMULATE
-#
+# the accumulate function makes and iterator that returns accumulated sums or any other function that it will as input.
 from itertools import accumulate
-
+import operator
+a = [1,2,3,4]
+acc = accumulate(a)
+'''print(list(acc))''' # by default it will compute the sums.
+# it can also multiply the elements. then we need to give an argument.
+ac = accumulate(a, func = operator.mul)
+'''print(list(ac))'''
+# max
+a = [1,2,5,3,4]
+acc_max = accumulate(a, func= max)
+'''print(list(acc_max))'''
