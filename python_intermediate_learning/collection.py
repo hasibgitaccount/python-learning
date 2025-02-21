@@ -3,7 +3,7 @@
 '''
 1. counter
 2. namedtuple
-3. orderedDict
+3. OrderedDict
 4. defaultDict
 5. deque.
 '''
@@ -39,3 +39,31 @@ pt = point(1, -4)
 '''print(pt)
 # i can also access the fields.
 print(pt.x, pt.y)'''
+
+# OrderedDict
+# OrderedDict is like a regular dictionary but they remember the order the items were inserted. they have lose importance since normal dict has also function now.
+from collections import OrderedDict
+order_dict = OrderedDict()
+order_dict['b'] = 3
+order_dict['c'] = 4
+order_dict['a'] = 2
+'''print(order_dict) # as you can see it can remember its order .
+
+normal_dict = {}
+normal_dict['b'] = 3
+normal_dict['c'] = 4
+normal_dict['a'] = 2
+print(normal_dict) '''# normal dictionary can also use so thats usecase has now become obsolete.
+
+# defaultdict
+# the defaultdict is also very similar to normal dict. the only difference is that it will have a default value if the key has not been set yet.
+from collections import defaultdict
+d_dict = defaultdict(int) # here as a argument we will give a default type
+d_dict['a'] = 1.0
+d_dict['b'] = 2
+'''print(d_dict)
+print(d_dict['c'])''' # here since 'c' key doesnt have a int value so it took the default int value 0. if it was float then it would give 0.0, list will give a empty list
+
+# deque
+
+from collections import deque
