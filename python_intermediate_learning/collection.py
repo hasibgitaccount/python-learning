@@ -28,3 +28,14 @@ print(my_counter.most_common(1)[0][1])'''
 '''print(list(my_counter.elements()))'''
 
 # NAMEDTUPLE
+# of course first of all we have to import it.
+from collections import namedtuple
+# the namedtuple is an easy to create and lightweight object type. similar to a struct.
+point = namedtuple('point', 'x,y') # here as the first argument we will give the variable name and as the second argument we use another string and use all the different fields we want seperated by comma or space.
+
+# so what happened there was it created a class called point with the fields x and y.
+# so now i can create this point.
+pt = point(1, -4)
+'''print(pt)
+# i can also access the fields.
+print(pt.x, pt.y)'''
