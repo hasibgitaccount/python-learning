@@ -1,21 +1,15 @@
-a= 4
-b = 4
 
-operator1 =('user wants addition',)
-operator2 =('user wants substraction',)
-operator3 =('user wants multiplication',)
-operator4 =('user wants division',)
+list1 = [3,4,5,6,7,8]
 
-if 'user wants addition' in operator1: 
-    print('a + b is equal to', a + b)
+for i in list1:
+    index = list1.index(i)
+    list1[index] = list1[index]**2
 
-if 'user wants substraction' in operator2:
-    print('a - b is equal to', a - b)
-
-if 'user wants multiplication' in operator3:
-    print('a * b is equal to', a * b)
-
-if 'user wants division' in operator4:
-    print('a / b is equal to', a / b)
+print(list1)
 
 
+for i in list1:
+    'list1.index[i] = list1.index[i]**2'
+
+
+'''list1[list1.index(i)] = list1[list1.index(i)]**2'''
