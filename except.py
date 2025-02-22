@@ -60,13 +60,13 @@ assert (x >= 0), 'x is not positive'
 try:
     a = 10/0
 except:
-    '''print('not gonna execute')'''  # here if the code in try part is wrong then it will execute the except method.
+    print('not gonna execute')  # here if the code in try part is wrong then it will execute the except method.
 
 # we can also catch the type of exceptions.
 try:
     a = 10/0
 except Exception as e:
-    '''print(e)'''
+    print(e)
 
 # its good practice to specify the type of exception you want to catch. and therefore you have to know the possible errors.
 try:
@@ -75,7 +75,7 @@ try:
 except ZeroDivisionError as e:
     print(e)
 except TypeError as e:
-    '''print(e)'''
+    print(e)
 
 # in the try except block we can also have else clause.
 # an else is runned if no exception is occured.
@@ -87,7 +87,7 @@ except TypeError as c:
 except ZeroDivisionError as d:
     print(d)
 else:
-    '''print('everything is fine')'''
+    print('everything is fine')
 
 # finally clause 
 # finally clause runs always no matter the exception or not and this is used for to make some cleanup operation
@@ -99,6 +99,41 @@ except TypeError as c:
 except ZeroDivisionError as d:
     print(d)
 else:
-    '''print('everything is fine')'''
+    print('everything is fine')
 finally:
-    '''print('cleanup baby!!!!')'''
+    print('cleanup baby!!!!')
+
+# how we can define our own exception.
+# we can simply define our own error classes by sub classing from the base exception class.
+class ValueTooHighError(Exception):
+    pass
+
+
+def test_value(x):
+    if x > 100:
+        raise ValueTooHighError('value is too high')
+try:
+    test_value(200)
+except ValueTooHighError as d:
+    print(d)
+
+
+class ValueTooSmallError(Exception):
+    def __init__(self, message, value):
+        self.message = message
+        self.value = value
+        
+
+
+def test_value(x):
+    if x > 100:
+        raise ValueTooHighError('value is too high')
+    if x < 5:
+        raise ValueTooSmallError('value is too small', x)
+
+try:
+    test_value(2)
+except ValueTooHighError as d:
+    print(d)
+except ValueTooSmallError as f:
+    print(f.message, f.value)
