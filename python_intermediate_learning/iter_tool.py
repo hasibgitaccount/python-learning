@@ -11,7 +11,7 @@
 # PRODUCT
 
 # first of all we have to import it
-from itertools import groupby
+from itertools import product
 import operator
 from itertools import accumulate
 from itertools import combinations, combinations_with_replacement
@@ -67,7 +67,7 @@ print(list(acc_max))
 def smaller_than_3(x):
     return x < 3
 
-
+from itertools import groupby
 a = [1, 2, 3, 4]
 # we also have to give a key, we can define it as a function also.
 g = groupby(a, key=smaller_than_3)
@@ -100,6 +100,9 @@ for i in cycle(a):
     '''print(i)''' # dont ever run it . it is infinite
 
 # REPEAT
+from itertools import repeat
 for i in repeat(1):
     '''print(i)''' # dont run it
-
+# i can also stop the repetition with a second argument
+for i in repeat(1,4):
+    '''print(i)'''
