@@ -60,6 +60,7 @@ assert (x >= 0), 'x is not positive'
 try:
     a = 10/0
 except:
+    
     print('not gonna execute')  # here if the code in try part is wrong then it will execute the except method.
 
 # we can also catch the type of exceptions.
