@@ -18,3 +18,5 @@ logger = logging.getLogger(__name__) # its good practice to use double underscor
 # logger.propagate = False        # lets just comment it.
 logger.info('hello from helper')
 # then we need to go to our main file(module), here the log file.
+
+#   PAUSED THE VIDEO AT 2 HOURS 28 MINUTES 45 SECONDS.

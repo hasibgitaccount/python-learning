@@ -40,6 +40,29 @@ import helperlog
 # now if i dont want to have this propagation, i can say logger.propogate equals false in helperlog.py file(module). by default its true. and now this will not propogate to the base logger. 
 
 # import helperlog
-# now if we run the module and import the helperlog file(module) then nothing gets locked because it doesn't propogate to our base logger.
+# now if we run the module and import the helperlog file(module) then nothing gets logged because it doesn't propogate to our base logger.
 
 # LOCK HANDLERS
+
+# handlers objects are responsible for dispatching the appropriate lock message to the handlers specific destination. i can use different handlers to send log messages to this standard output stream to files via HTTP or via email.
+
+# how to set different log handlers.
+logger1 = logging.getLogger(__name__)
+
+# create handler
+# i want to have a handler that locks to this stream, a stream handler. this equals logging.streaming handler. 
+stream_h = logging.StreamHandler()
+
+# #then a file handler that locks to the file. the file handler equals logging.file handler and then it needs a name.
+file_h = logging.FileHandler('file.log')
+
+# and then typically for each handler you want to set the level and the format.
+stream_h.setLevel(logging.WARNING)
+
+# and for the file handler, the file handler should only log method messages.  
+file_h.setLevel(logging.ERROR)
+
+# now lets specify some format.
+fomatter = logging.Formatter('%(name)s - %(levelname)s - %(message)s')
+
+#   PAUSED THE VIDEO AT 2 HOURS 28 MINUTES 45 SECONDS.
