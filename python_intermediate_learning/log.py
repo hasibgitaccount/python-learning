@@ -11,14 +11,31 @@ import logging
 5. logging.critical (this is a critical message)
 '''
 
-# the indicate the severity of the events
+
+# if we want to change this then we can do that by setting up the basic configuration. and we need to do it right after importing the logging module.
+# then we can specify some arguments for the basic configuration.
+import logging
+logging.basicConfig(level=logging.DEBUG, format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
+                    datefmt='%m/%d/%Y %H:%M:%S')
+
 '''logging.debug ('this is a debug message')
 logging.info ('this is an info message')
 logging.warning ('this is a warning message')
 logging.error ('this is an error message')
-logging.critical ('this is a critical message')''' # by default only warning and after it will be printed.
+logging.critical ('this is a critical message')'''
+# by default our logger is called the root logger.
 
-# if we want to change this then we can do that by setting up the basic configuration. and we need to do it right after importing the logging module.
-# then we can specify some arguments here.
-import logging
-logging.basicConfig
+
+
+# if i want to log in different modules, then it's best practice to not use this root logger, but create your own logger in my module.
+
+# for that we need to go to another file(module) , here we created a helper file(module).
+
+# after finishing the work in helper file(module) we come back to this file(module)
+# now here after importing logging and setting the basic config if i import the helper file(module) then it will lock the message from the helper file(module) with the name of this logger.so its good practice to create your own logger in your files(modules) with this get logger function and then give it name with double underscore here as a name.
+import helperlog
+
+
+'''
+if i create
+'''
