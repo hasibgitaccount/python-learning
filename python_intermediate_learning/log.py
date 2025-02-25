@@ -35,7 +35,11 @@ logging.critical ('this is a critical message')'''
 # now here after importing logging and setting the basic config if i import the helper file(module) then it will lock the message from the helper file(module) with the name of this logger.so its good practice to create your own logger in your files(modules) with this get logger function and then give it name with double underscore here as a name.
 import helperlog
 
+# if i create this log on here, then it will create a hierarchy of loggers. is starts at the root logger and all this new logger gets added to this hierarchy and they propagate its messages up to the base logger.
 
-'''
-if i create
-'''
+# now if i dont want to have this propagation, i can say logger.propogate equals false in helperlog.py file(module). by default its true. and now this will not propogate to the base logger. 
+
+# import helperlog
+# now if we run the module and import the helperlog file(module) then nothing gets locked because it doesn't propogate to our base logger.
+
+# LOCK HANDLERS
