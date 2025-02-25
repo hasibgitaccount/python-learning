@@ -19,5 +19,6 @@ logging.error ('this is an error message')
 logging.critical ('this is a critical message')''' # by default only warning and after it will be printed.
 
 # if we want to change this then we can do that by setting up the basic configuration. and we need to do it right after importing the logging module.
+# then we can specify some arguments here.
 import logging
 logging.basicConfig
