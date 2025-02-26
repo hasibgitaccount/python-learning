@@ -12,6 +12,7 @@
 
 class Item:
 
+# there are some very special methods starting and ending with underscore, called magic methods.
     def __init__(self):
         print('i am created!')
 # now when i go ahead and create an instance of a class(object), then python executes this __init__ function automatically, it means that since we have declared our class, python is going to run through that line. and since an instance(object) has been created and we have double underscore init method designed, then it is going to call the actions that are inside this __init__ method(function).
@@ -58,7 +59,8 @@ item2.quantity = 3
 
 # the good news is we can do that by creating a special method, with a very unique name called '__init__', also called as constructor. basically that is a method with a unique name that you need to call it the way it is intentionally, in order to use its special features.
 
-# there are some very special methods starting and ending with underscore, called magic methods.
+# now the next issue is we still hard code the attribute like .name, .price. to avoid hard coding those attributes in each of the instances 
+# for each of the instances we create, it will go ahead and call the __init__ method or other method automatically. it means we can not only allow ourselves to recieve the self parameter, because this is a mandatory thing we should do, because python in the background passes the instance itself as the first argument. in addition, we could also take some more parameters and then do something with them. 
 
 
 
