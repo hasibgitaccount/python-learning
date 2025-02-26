@@ -1,0 +1,1 @@
+print(type(item1.price)) # int
