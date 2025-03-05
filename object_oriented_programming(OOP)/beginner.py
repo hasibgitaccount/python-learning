@@ -11,11 +11,21 @@
 # to initiate a class we need to write class and follow it by giving it a name that i want to create. and finally a colon.
 
 class Item:
+    pay_rate = 0.8 # pay rate after 20% discount.
 
 # there are some very special methods starting and ending with underscore, called magic methods.
-    def __init__(self, name, price, quantity): # here the object is going to complain why name is not filled in item1 and etc.
+    def __init__(self, name: str, price: float, quantity = 0): # here the object is going to complain why name is not filled in item1 and etc.
         '''print(' i am created')''' # here it will print how many objects is in there.
         '''print(f"an instance created: {name}")'''
+
+        # run validations to the recieve arguments.
+        # assert statement. assert is a statement keyword that is used to check if there is a match between what is happening and my expectations. if we dont want the price and the quantity to be zero then, it is a great idea to validate that the price and quantity are both greater than or equal to zero.
+        assert price >= 0, f"price{price} is less than zero" # it will help us understand the issue
+        assert quantity >= 0, f"quantity{quantity} is less than zero"
+        # using the assert statement could allow us to validate the arguments we recieve. also catch the bugs quickly.
+        
+
+        # assign to self object.
         self.name = name
         self.price = price
         self.quantity = quantity
@@ -36,6 +46,7 @@ notes when working with classes.
 # now we can avoid coding the attributes individually, just give the arguments in the object.
 
 # now when i go ahead and create an instance of a class(object), then python executes this __init__ function automatically, it means that since we have declared our class, python is going to run through that line. and since an instance(object) has been created and we have double underscore init method designed, then it is going to call the actions that are inside this __init__ method(function).
+
 
     def calculate_total_price(self):
         # calculate_total_price(self, x, y):
@@ -95,5 +106,21 @@ print(item2.quantity)'''
 '''print(item1.calculate_total_price())
 print(item2.calculate_total_price())'''
 
+
+# consdier a situation where i will want to make use of an attribute that is going to be global or  across all the instances. called a class attribute. not the instance attribute.  
+# a class attribute is an attribute that is going to be belong to the class itself. however, i can also access this attribute from the instance level as well.
+
+# i will try to access to the reference of the class itself. so im not going to create an instance. besides im just going to bring in the reference to the class level itself. then im going to access this class attribute.
+'''print(Item.pay_rate)'''
+
+# we can also access those class attributes from the instance level.
+'''print(item1.pay_rate)
+print(item2.pay_rate)'''
+
+# there is something we need to understand when we work with instances(object) in python. so when we have an instance on our hand then at first the instance tries to bring the attribute from the instance level at the first stage, but if it doesn't find it there, then it is going to try to bring that attribute from the class level.
+
+# there is a build in magic attribute called __dict__, that you can go ahead and see all the attributes that are belonging to that specific object. this will go ahead and bring you all the attributes that are belonging to the object that you apply this attribute and want to see its content.
+'''print(Item.__dict__) # all the attributes for class level
+print(item1.__dict__)''' # all the attributes for instance level.
 
 # SECOND PART: instantiate some objects of the class.
