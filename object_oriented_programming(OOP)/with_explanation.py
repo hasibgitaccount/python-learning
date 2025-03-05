@@ -123,4 +123,6 @@ print(item2.pay_rate)'''
 '''print(Item.__dict__) # all the attributes for class level
 print(item1.__dict__)''' # all the attributes for instance level.
 
+
+
 # SECOND PART: instantiate some objects of the class.
