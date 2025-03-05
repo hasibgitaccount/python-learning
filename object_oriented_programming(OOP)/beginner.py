@@ -13,23 +13,45 @@
 class Item:
 
 # there are some very special methods starting and ending with underscore, called magic methods.
-    def __init__(self):
-        print('i am created!')
+    def __init__(self, name, price, quantity): # here the object is going to complain why name is not filled in item1 and etc.
+        '''print(' i am created')''' # here it will print how many objects is in there.
+        '''print(f"an instance created: {name}")'''
+        self.name = name
+        self.price = price
+        self.quantity = quantity
+
+# thats how to work with __init__ method. always take care of the attributes that i want to assign to an object inside the __init__ method. inside the constructor like self.name etc. constructor here is the __init__ method.
+
+    """
+notes when working with classes.
+1. when we use __init__ method, this doesn't mean that we can't differentiate mandatory parameters and non mandatory parameters. so if you dont have the value of a parameter in the __init__ then give a default valie like price = 0 and ignore passing the value to the objets.
+2. i can assign attributes to specific instances(object) individually.
+3. in the method calculate_total_price() , it still recieves x and y as parameters. now why it still recieves those parameters. well, we could for sure not recieve those parameters. because as we know, for each method we design in classes, then the object itself is passed as an argements and that's why we recieve self. this means that, we could just return self.price muliply(*) self.quantify. it means we dont really have to recieve those parameters. because we assign those attributes, once the instance has been graded(created). it means we have access to those attributes through how the methods that we are going to add here in this class in the future.
+"""
+
+# here im assigning the attributes of 'name' to each instances(object) that is going to be created. and im making that to be equal to the name that is passed in to the instances(object). now i have a dynamic attribute assignment thanks to self.name = name
+
+# the fact that we have self as a parameter here actually allow us assign the attributes from the init method. so that we will not have to assign the attributes for each of the instances we create. it means i can dynamically assign an attribute to an instance(object) to this magic method called __init__.
+
+# now we can avoid coding the attributes individually, just give the arguments in the object.
+
 # now when i go ahead and create an instance of a class(object), then python executes this __init__ function automatically, it means that since we have declared our class, python is going to run through that line. and since an instance(object) has been created and we have double underscore init method designed, then it is going to call the actions that are inside this __init__ method(function).
 
-    def calculate_total_price(self, x, y):
+    def calculate_total_price(self):
+        # calculate_total_price(self, x, y):
          # here the parameter 'self' is auto generated. python wants us recieve it intentionally. it happens because python passes the object itself as a first argument when you go ahead and call those methods.
         # we are gonna multiply price and quantity.        
         # now if i call this method: at line 25
-        return x * y    
+        # return x * y  
+        return self.price * self.quantity  
 
 # now that we have created our class, we are allowed to create soem instances(objects) for the class.
-item1 =Item() # this action is equivalent to creating an instance of a class.
+item1 =Item('phone', 100, 5) # this action is equivalent to creating an instance of a class.
 
 # now we are going to assign some attributes to instances of a class(object). to create attributes we need to use dot sign right after the instances of a class(object)
-item1.name = 'phone'
-item1.price = 100
-item1.quantity = 5
+# item1.name = 'phone'
+# item1.price = 100
+# item1.quantity = 5
 '''print(item1.calculate_total_price(item1.price, item1.quantity))''' # but when you go ahead and call a method from an instance, then python passes the object itself as the first argument. that's why we are not allowed to create methods that will never recieve parameters.
 # now when we gave two arguments and calls the method then in the background python passes 'item1' as the first argument 'self' and the other two as x and y.
 
@@ -48,10 +70,11 @@ random_str = 'aaa'
 # here we grabbed the instance(object) of a string named random_str and then i print them in the upper case using upper method.
 
 # now the qustion is how we can design some methods that are going to be allowed to execute on our instances(objects). the answer is inside our class, so we will go inside our class which we are right now and write some methods that will be accessible from our instances(objects). we are going to create a method(function) in line 14. now we are going to create just one more instance(object) of this item.
-item2 = Item()
-item2.name = 'laptop'
-item2.price = 1000
-item2.quantity = 3
+item2 = Item('laptop', 1000, 3)
+# item2.name = 'laptop'
+#item2.price = 1000
+# item2.quantity = 3
+item2.has_numpad = False
 '''print(item2.calculate_total_price(item2.price, item2.quantity))'''
 # that is how i can create a method.
 
@@ -60,10 +83,17 @@ item2.quantity = 3
 # the good news is we can do that by creating a special method, with a very unique name called '__init__', also called as constructor. basically that is a method with a unique name that you need to call it the way it is intentionally, in order to use its special features.
 
 # now the next issue is we still hard code the attribute like .name, .price. to avoid hard coding those attributes in each of the instances 
-# for each of the instances we create, it will go ahead and call the __init__ method or other method automatically. it means we can not only allow ourselves to recieve the self parameter, because this is a mandatory thing we should do, because python in the background passes the instance itself as the first argument. in addition, we could also take some more parameters and then do something with them. 
+# for each of the instances we create, it will go ahead and call the __init__ method or other method automatically. it means not only we can allow ourselves to recieve the self parameter, because this is a mandatory thing we should do, because python in the background passes the instance itself as the first argument. in addition, we could also take some more parameters and then do something with them. 
 
+'''print(item1.name)
+print(item2.name)
+print(item1.price)
+print(item2.price)
+print(item1.quantity)
+print(item2.quantity)'''
 
-
+'''print(item1.calculate_total_price())
+print(item2.calculate_total_price())'''
 
 
 # SECOND PART: instantiate some objects of the class.
