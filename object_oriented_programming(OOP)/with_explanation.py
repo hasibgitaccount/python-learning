@@ -11,6 +11,7 @@
 # to initiate a class we need to write class and follow it by giving it a name that i want to create. and finally a colon.
 
 class Item:
+    all = []
     pay_rate = 0.8 # pay rate after 20% discount.
 
 # there are some very special methods starting and ending with underscore, called magic methods.
@@ -19,6 +20,7 @@ class Item:
         '''print(f"an instance created: {name}")'''
 
         # run validations to the recieve arguments.
+
         # assert statement. assert is a statement keyword that is used to check if there is a match between what is happening and my expectations. if we dont want the price and the quantity to be zero then, it is a great idea to validate that the price and quantity are both greater than or equal to zero.
         assert price >= 0, f"price{price} is less than zero" # it will help us understand the issue
         assert quantity >= 0, f"quantity{quantity} is less than zero"
@@ -29,6 +31,10 @@ class Item:
         self.name = name
         self.price = price
         self.quantity = quantity
+
+        # actions to execute
+        Item.all.append(self)
+        # now we know that self is actually the instance itself every time that it is being created.
 
 # thats how to work with __init__ method. always take care of the attributes that i want to assign to an object inside the __init__ method. inside the constructor like self.name etc. constructor here is the __init__ method.
 
@@ -138,6 +144,12 @@ print(item2.pay_rate)'''
 '''print(Item.__dict__) # all the attributes for class level
 print(item1.__dict__)''' # all the attributes for instance level.
 
+item3 = Item('cabel', 10 , 5)
+item4 = Item('mouse', 50 , 5)
+item5 = Item('keyboard', 75 , 5)
 
+# now what is problematic with our class right now is that we don't have any resource where we can just access all the items that we have in our shop right now. now it could have been nicer if we could somehow have a list with all the item instances(object) that have been created up until now and in near future. but currently there is not an approach that will give us a list with elements where each element will represent an instance of a class. and there is a wonderful candidate for creating a class attribute that we can name 'all'. now we need to figure out how we are going to add our instances(object) for each time that we are going to create an instance. now if we remember, the __init__ method is being called immediately once the instance has been graded(created). so we need to go inside the __init__ method and use a code that will be responsible for appending to that list every time we create an instance(object)
+
+print(Item.all)
 
 # SECOND PART: instantiate some objects of the class.

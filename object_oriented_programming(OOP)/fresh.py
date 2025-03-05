@@ -1,4 +1,5 @@
 class Item:
+    all = []
     pay_rate = 0.8 # pay rate after 20% discount.
 
 
@@ -12,6 +13,10 @@ class Item:
         self.name = name
         self.price = price
         self.quantity = quantity
+
+
+        # actions to execute
+        Item.all.append(self)
 
 
     def calculate_total_price(self):  
@@ -31,3 +36,9 @@ item2 = Item('laptop', 1000, 3)
 item2.pay_rate = 0.7
 item2.apply_discount()
 print(item2.price) 
+
+item3 = Item('cabel', 10 , 5)
+item4 = Item('mouse', 50 , 5)
+item5 = Item('keyboard', 75 , 5)
+
+print(Item.all)
