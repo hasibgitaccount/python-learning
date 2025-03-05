@@ -56,8 +56,18 @@ notes when working with classes.
         # return x * y  
         return self.price * self.quantity  
 
+# now lets create a method to apply the discount.
+    def apply_discount(self):
+        self.price = self.price * self.pay_rate
+
+# now if we need to specify a specific discount rate for a specific item then we need to assign the attributes directly to the instances that i would like to have a different discount amount.
+
+
 # now that we have created our class, we are allowed to create soem instances(objects) for the class.
 item1 =Item('phone', 100, 5) # this action is equivalent to creating an instance of a class.
+
+item1.apply_discount()
+'''print(item1.price)'''
 
 # now we are going to assign some attributes to instances of a class(object). to create attributes we need to use dot sign right after the instances of a class(object)
 # item1.name = 'phone'
@@ -82,6 +92,11 @@ random_str = 'aaa'
 
 # now the qustion is how we can design some methods that are going to be allowed to execute on our instances(objects). the answer is inside our class, so we will go inside our class which we are right now and write some methods that will be accessible from our instances(objects). we are going to create a method(function) in line 14. now we are going to create just one more instance(object) of this item.
 item2 = Item('laptop', 1000, 3)
+item2.pay_rate = 0.7
+# here, for item2 it will find the attribute of pay_rate in the instance level. so item2 does not have to go to the class level and bring back the value of pay_rate.
+item2.apply_discount()
+print(item2.price) 
+
 # item2.name = 'laptop'
 #item2.price = 1000
 # item2.quantity = 3
