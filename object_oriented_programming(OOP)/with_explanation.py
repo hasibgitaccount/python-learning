@@ -102,10 +102,13 @@ notes when working with classes.
         # for i.e: 5.0, 10.0
 
         # it is going to check if the recieved parameters is an instance of an iteger or float.
-        if isinstance(num, float):
+        if isinstance(num, float): # if the number is a float
             # count out the floats that are point zero.
             return num.is_integer()
-        
+        elif isinstance(num, int): # if the number is an integer.
+            return True
+        else:
+            return False
 
 
 # now what we can do now is returning a string that will be responsible to represent this object. now, obviously, we dont want to use something that is not unique for each of the instances. so we will return a string that will be unique for each instances.
@@ -115,7 +118,9 @@ notes when working with classes.
 # here we will pass our csv file. so this method should take full responsibility to instantiate those objects for us.
 # so after our class definition, we only go ahead and call this method
 Item.instantiate_from_csv()
-print(Item.all)
+'''print(Item.all)'''
+
+'''print(Item.is_int(7))'''
 
 # now that we have created our class, we are allowed to create soem instances(objects) for the class.
 '''item1 =Item('phone', 100, 5)''' # this action is equivalent to creating an instance of a class.
@@ -213,4 +218,4 @@ for instance in Item.all:
 # static method.
 # a static method should do some work for you that has some logical connections to a class. for example if i want to check if a number is a integer or float then static method is a good candidate. because this has some connections to the class that we work with.
 
-# SECOND PART: instantiate some objects of the class.
+# CLASS METHOD vs STATIC METHOD

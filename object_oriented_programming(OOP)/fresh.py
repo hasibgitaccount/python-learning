@@ -44,6 +44,17 @@ class Item:
                 quantity= float(item.get('quantity'))
             )
 
+
+
+    @staticmethod
+    def is_int(num):
+        if isinstance(num, float):
+            return num.is_integer()
+        elif isinstance(num, int):
+            return True
+        else:
+            return False
+
     
     def __repr__(self):
         return f"Item('{self.name}','{self.price}', {self.quantity})"
@@ -52,6 +63,9 @@ class Item:
 
 Item.instantiate_from_csv()
 print(Item.all)
+
+print(Item.is_int(7))
+
 
 '''item1 =Item('phone', 100, 5)
 item1.apply_discount()
