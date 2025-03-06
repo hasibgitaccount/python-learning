@@ -68,6 +68,9 @@ notes when working with classes.
 
 # now if we need to specify a specific discount rate for a specific item then we need to assign the attributes directly to the instances that i would like to have a different discount amount.
 
+# now what we can do now is returning a string that will be responsible to represent this object. now, obviously, we dont want to use something that is not unique for each of the instances. so we will return a string that will be unique for each instances.
+    def __repr__(self):
+        return f"Item('{self.name}','{self.price}', {self.quantity})"
 
 # now that we have created our class, we are allowed to create soem instances(objects) for the class.
 item1 =Item('phone', 100, 5) # this action is equivalent to creating an instance of a class.
@@ -101,7 +104,7 @@ item2 = Item('laptop', 1000, 3)
 item2.pay_rate = 0.7
 # here, for item2 it will find the attribute of pay_rate in the instance level. so item2 does not have to go to the class level and bring back the value of pay_rate.
 item2.apply_discount()
-print(item2.price) 
+'''print(item2.price)''' 
 
 # item2.name = 'laptop'
 #item2.price = 1000
@@ -149,7 +152,12 @@ item4 = Item('mouse', 50 , 5)
 item5 = Item('keyboard', 75 , 5)
 
 # now what is problematic with our class right now is that we don't have any resource where we can just access all the items that we have in our shop right now. now it could have been nicer if we could somehow have a list with all the item instances(object) that have been created up until now and in near future. but currently there is not an approach that will give us a list with elements where each element will represent an instance of a class. and there is a wonderful candidate for creating a class attribute that we can name 'all'. now we need to figure out how we are going to add our instances(object) for each time that we are going to create an instance. now if we remember, the __init__ method is being called immediately once the instance has been graded(created). so we need to go inside the __init__ method and use a code that will be responsible for appending to that list every time we create an instance(object)
+    
 
-print(Item.all)
+'''print(Item.all)''' # here the way the object is being represented is not too friendly. it could have been nicer if could change the way that the object is being represented in this list here. to achive that, we will use a magic method inside our class called __repr__. this stands for representing my object. by using this i will have the control to display my objects when im printing them in my console. 
+
+# its going to be very useful if i want to do something with only one of the attributes of my instacnes(objects). so if i want to print only the name of all of my instances then i can use forloop to achieve such tasks.
+for instance in Item.all:
+    '''print(instance.name)''' 
 
 # SECOND PART: instantiate some objects of the class.
