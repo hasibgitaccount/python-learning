@@ -69,6 +69,7 @@ notes when working with classes.
 
 # now if we need to specify a specific discount rate for a specific item then we need to assign the attributes directly to the instances that i would like to have a different discount amount.
 
+# CLASS METHOD.
 # here we also need to give self parameter because its going to be passed as the instance itself. now the problem is we are not going to have any other instances to call this method from the instance because this method is actually designed for instantiating the object itself. it means that, this method can't be called from an instance. so the way this is going to be solved is to converting this method into a class method. the class method is a method that can be accessed from the class level only.
 # now lets see how to create a class method. first we need to delete the self. now in order to convert this into a class method, we need to use a decorator that will be responsible to convert this methdo into a class method. now decorators in method is just a quick way to change the behaviour of the function that we will write by basically calling them just before the line that we create our function.
 # when we create our class methods, then the class object itself is passed as the first argument always in the background. so it is a bit similar to instance where it is also passed as a first argument. but this time, when we call a class method in this approach then the class reference(object,instance) must be passed as a first argument. so that is why i should still recieve at least one parameter, but we can't name the parameter self, because that is going to be very confusing.
@@ -90,6 +91,21 @@ notes when working with classes.
 # before we go ahead and instantiate soem objects, lets go ahead and see the results of iterating over the items list.
 
 # the only thing we miss right now is creating instances(object), and beside printing those, we could now say something like Item( ). this should be enough to instantiate our instances. then i can pass my arguments there by basically reading the keys from the dictionary.
+
+
+# STATIC METHOD.
+# a static method should do some work for you that has some logical connections to a class. for example if i want to check if a number is a integer or float then static method is a good candidate. because this has some connections to the class that we work with. we will use a decorator like class method.
+# here the self parameter is just a regular parameter that we recieve. it means the static methods are never really sending in the background, the instance as a fiirst argument. that is unlike the class methods, the class methods are sending the class reference as a first argument. and that is why we had to recieve the cls parameter. but with static method we never send the object as the first argument. that is why we should think the static method like a regular function that just recieves parameters like we are familiar with isolated functions.
+    @staticmethod
+    def is_int(num):
+        # we will count out the float that are point zero.
+        # for i.e: 5.0, 10.0
+
+        # it is going to check if the recieved parameters is an instance of an iteger or float.
+        if isinstance(num, float):
+            # count out the floats that are point zero.
+            return num.is_integer()
+        
 
 
 # now what we can do now is returning a string that will be responsible to represent this object. now, obviously, we dont want to use something that is not unique for each of the instances. so we will return a string that will be unique for each instances.
@@ -193,5 +209,8 @@ item5 = Item('keyboard', 75 , 5)'''
 # its going to be very useful if i want to do something with only one of the attributes of my instacnes(objects). so if i want to print only the name of all of my instances then i can use forloop to achieve such tasks.
 for instance in Item.all:
     '''print(instance.name)''' 
+
+# static method.
+# a static method should do some work for you that has some logical connections to a class. for example if i want to check if a number is a integer or float then static method is a good candidate. because this has some connections to the class that we work with.
 
 # SECOND PART: instantiate some objects of the class.
