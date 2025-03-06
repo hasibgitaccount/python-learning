@@ -10,6 +10,7 @@
 
 # to initiate a class we need to write class and follow it by giving it a name that i want to create. and finally a colon.
 
+import csv
 class Item:
     all = []
     pay_rate = 0.8 # pay rate after 20% discount.
@@ -68,14 +69,42 @@ notes when working with classes.
 
 # now if we need to specify a specific discount rate for a specific item then we need to assign the attributes directly to the instances that i would like to have a different discount amount.
 
+# here we also need to give self parameter because its going to be passed as the instance itself. now the problem is we are not going to have any other instances to call this method from the instance because this method is actually designed for instantiating the object itself. it means that, this method can't be called from an instance. so the way this is going to be solved is to converting this method into a class method. the class method is a method that can be accessed from the class level only.
+# now lets see how to create a class method. first we need to delete the self. now in order to convert this into a class method, we need to use a decorator that will be responsible to convert this methdo into a class method. now decorators in method is just a quick way to change the behaviour of the function that we will write by basically calling them just before the line that we create our function.
+# when we create our class methods, then the class object itself is passed as the first argument always in the background. so it is a bit similar to instance where it is also passed as a first argument. but this time, when we call a class method in this approach then the class reference(object,instance) must be passed as a first argument. so that is why i should still recieve at least one parameter, but we can't name the parameter self, because that is going to be very confusing.
+# now we can use a context manager to read our csv file. now both of those files are located in the same location so its easy and the permission will be 'r' because we only want to read it.
+# now inside the open we will use some methods to directly read the csv, which will be responsible for converting this into a python dictionary. this method should go ahead and read our content as a list of dictionaries. but at the end we should also go ahead and convert this into a list. 
+    @classmethod
+    def instantiate_from_csv(cls):
+        with open('object_oriented_programming(OOP)/items.csv', 'r') as f:
+            reader = csv.DictReader(f)
+            items = list(reader)
+
+        for item in items:
+            '''print(item)'''
+            Item(
+                name= item.get('name'),
+                price= float(item.get('price')),
+                quantity= float(item.get('quantity'))
+            )
+# before we go ahead and instantiate soem objects, lets go ahead and see the results of iterating over the items list.
+
+# the only thing we miss right now is creating instances(object), and beside printing those, we could now say something like Item( ). this should be enough to instantiate our instances. then i can pass my arguments there by basically reading the keys from the dictionary.
+
+
 # now what we can do now is returning a string that will be responsible to represent this object. now, obviously, we dont want to use something that is not unique for each of the instances. so we will return a string that will be unique for each instances.
     def __repr__(self):
         return f"Item('{self.name}','{self.price}', {self.quantity})"
 
-# now that we have created our class, we are allowed to create soem instances(objects) for the class.
-item1 =Item('phone', 100, 5) # this action is equivalent to creating an instance of a class.
+# here we will pass our csv file. so this method should take full responsibility to instantiate those objects for us.
+# so after our class definition, we only go ahead and call this method
+Item.instantiate_from_csv()
+print(Item.all)
 
-item1.apply_discount()
+# now that we have created our class, we are allowed to create soem instances(objects) for the class.
+'''item1 =Item('phone', 100, 5)''' # this action is equivalent to creating an instance of a class.
+
+'''item1.apply_discount()'''
 '''print(item1.price)'''
 
 # now we are going to assign some attributes to instances of a class(object). to create attributes we need to use dot sign right after the instances of a class(object)
@@ -100,16 +129,15 @@ random_str = 'aaa'
 # here we grabbed the instance(object) of a string named random_str and then i print them in the upper case using upper method.
 
 # now the qustion is how we can design some methods that are going to be allowed to execute on our instances(objects). the answer is inside our class, so we will go inside our class which we are right now and write some methods that will be accessible from our instances(objects). we are going to create a method(function) in line 14. now we are going to create just one more instance(object) of this item.
-item2 = Item('laptop', 1000, 3)
-item2.pay_rate = 0.7
+'''item2 = Item('laptop', 1000, 3)
+item2.pay_rate = 0.7'''
 # here, for item2 it will find the attribute of pay_rate in the instance level. so item2 does not have to go to the class level and bring back the value of pay_rate.
-item2.apply_discount()
+'''item2.apply_discount()'''
 '''print(item2.price)''' 
 
 # item2.name = 'laptop'
 #item2.price = 1000
 # item2.quantity = 3
-item2.has_numpad = False
 '''print(item2.calculate_total_price(item2.price, item2.quantity))'''
 # that is how i can create a method.
 
@@ -147,9 +175,15 @@ print(item2.pay_rate)'''
 '''print(Item.__dict__) # all the attributes for class level
 print(item1.__dict__)''' # all the attributes for instance level.
 
-item3 = Item('cabel', 10 , 5)
+'''item3 = Item('cabel', 10 , 5)
 item4 = Item('mouse', 50 , 5)
-item5 = Item('keyboard', 75 , 5)
+item5 = Item('keyboard', 75 , 5)'''
+
+# now that we understand how csv file works, lets go ahead and read our csv files and instantiate the instances in a generic way. lets delete those lines(objects) and use those lines in a method
+
+# now we can see here that until this point we maintain our data as code in this with_expanation.py file by only instantiating(creating) those items. now when we extend our applications and add more features, then we will have a harder life adding those features because the actual data and the code are maintained in the same location, means in the with_explanation.py file. now, we could think about creating a database that will maintain this information. but i want to keep things more simple and ause CSV. csv stands for comma separated values. it means i could go ahead and use csv file and i could store my values as comma separated where each line will represent a single structured data. csv is a great option here because it allows the data to be saved in a table structured fromat. lets create a csv file and paste the csv content that will be responsible to represent the same data that we have here. 
+# now there in the first line we will seperate everything will comma, in the first line the name, price etc will represent as columns that we are going to have as the data that we are going to maintain. and from the second line and further we are going to have some data that will represent the actual data that we look to maintain. and we should only look for a way to read the csv file and instantiate(create) the objects.
+
 
 # now what is problematic with our class right now is that we don't have any resource where we can just access all the items that we have in our shop right now. now it could have been nicer if we could somehow have a list with all the item instances(object) that have been created up until now and in near future. but currently there is not an approach that will give us a list with elements where each element will represent an instance of a class. and there is a wonderful candidate for creating a class attribute that we can name 'all'. now we need to figure out how we are going to add our instances(object) for each time that we are going to create an instance. now if we remember, the __init__ method is being called immediately once the instance has been graded(created). so we need to go inside the __init__ method and use a code that will be responsible for appending to that list every time we create an instance(object)
     
