@@ -112,8 +112,9 @@ notes when working with classes.
 
 
 # now what we can do now is returning a string that will be responsible to represent this object. now, obviously, we dont want to use something that is not unique for each of the instances. so we will return a string that will be unique for each instances.
+# now what we could use here, instead of hard coding the name of the class in the __repr__ method inside the Item class, we could access the name of the class generically. for that we have a special magic attribute, which is a generic way to access the name of the class from the instance. and by doing this, i recieve the name of the class that i initialize from the beginning 
     def __repr__(self):
-        return f"Item('{self.name}','{self.price}', {self.quantity})"
+        return f"{self.__class__.__name__}('{self.name}','{self.price}', {self.quantity})"
 
 # here we will pass our csv file. so this method should take full responsibility to instantiate those objects for us.
 # so after our class definition, we only go ahead and call this method
@@ -221,12 +222,40 @@ for instance in Item.all:
 
 # INHERITANCE
 
-class Inheritancing:...
 
-phone1 = Inheritancing('jscphonev10', 500, 5)
-phone1.broken_phones = 1
+# we could use inheritance in order to represent different kind of objects when i want to do that. by creating some classes where each class will represent a kind of an item. and then i could inherit from the item class in each of the child classes that i will create in future. when we talk about classes that we inherit from , then those are considered to be called parent classes. and when we use multiple classes that we inherit from that parent class, then those are called child classes.
+# we learned that, it is not a great idea to assign attributes manually, once we create those instances. the better way to do that is actually creating our constructor and pass the value in the instance creation.
+# one more thing. when we initialize the __init__ method inside the child class, then python expects some function to be called intentionally. and that functions name is super. super allows us to have full access to all the attributes of the parent class. and by using the super function we don't need to hard code the attribute assignment every time we want to come up with a child class. the super function will allow us to have the attributes access from the parent class.
+# for each child class that we use a seperated constructor, we also need to call the super function in order to have fully access for all the attributes and methods that are coming from the class that we inherit from.
+class phone(Item):
+    all = []
 
-phone2 = Inheritancing('jscphonev20', 700, 5)
-phone2.broken_phones = 1
+    def __init__(self, name: str, price: float, quantity = 0, broken_phones = 0):
+
+        # call to super function to have access to all the attributes / methods.
+        super().__init__(
+            name, price, quantity
+        )
+
+        # run validations to the recieve arguments.
+        assert broken_phones >= 0, f"broken_phones{quantity} is less than zero"
+        
+        # assign to self object.
+        self.broken_phones = broken_phones
+
+
+        # actions to execute
+        phone.all.append(self)
+
+
+phone1 = phone('jscphonev10', 500, 5, 1)
+print(phone1.calculate_total_price())
+
+phone2 = phone('jscphonev20', 700, 5, 1)
+
+
+print(Item.all)
+print(phone.all)
+
 # here, we have created two instances of a phone. also the two items here are also phones. so we could think about some attributes that could represent phone in real life. for example, broken phone. so after creating those attribute. now the next thing is to creating a method that would go ahead and calculate the phones that are not broken, meaning subtracting the quantity by the broken phones amount. 
 # now we could go ahead and create a seperate class that will inherit the functionalities that the 'Inheritancing' class will brings with it. so now we will create a seperate class called phone and then this phone class will inherit all the methods and all the attribute that 'Inheritancing' class has. 
