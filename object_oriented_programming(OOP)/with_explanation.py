@@ -29,7 +29,7 @@ class Item:
         
 
         # assign to self object.
-        self.name = name
+        self.__name = name # for read only functionality
         self.price = price
         self.quantity = quantity
 
@@ -53,6 +53,25 @@ notes when working with classes.
 # now we can avoid coding the attributes individually, just give the arguments in the object.
 
 # now when i go ahead and create an instance of a class(object), then python executes this __init__ function automatically, it means that since we have declared our class, python is going to run through that line. and since an instance(object) has been created and we have double underscore init method designed, then it is going to call the actions that are inside this __init__ method(function).
+
+
+    @property # getter . for getting a value
+    # property decorator = read only attribute
+    def name(self):
+        '''print('trying to get')'''
+        return self.__name
+
+
+# now we still might be curious about how to set a new value for the name attribute. there are some decorator that will allow me to for this property of name. so what we can do is, use a new method, where we can declare that we like to also set a new value for this attribute.
+    @name.setter # setter. to set the value.
+    def name(self, value):
+        if len(value) > 10:
+            raise Exception ('the name is too long')
+        else:
+            '''print('trying to set')'''
+            self.__name = value
+
+
 
 
     def calculate_total_price(self):
@@ -115,6 +134,14 @@ notes when working with classes.
 # now what we could use here, instead of hard coding the name of the class in the __repr__ method inside the Item class, we could access the name of the class generically. for that we have a special magic attribute, which is a generic way to access the name of the class from the instance. and by doing this, i recieve the name of the class that i initialize from the beginning 
     def __repr__(self):
         return f"{self.__class__.__name__}('{self.name}','{self.price}', {self.quantity})"
+    
+
+
+# here we will create our read only file. for that we will use decorator. decorator is like functions that we will pre-execute before our functions. and here is the exact location that i could set up the name of our read only attribute. 
+    '''@property
+    def read_only_name(self):
+        return 'aaa' '''
+
 
 # here we will pass our csv file. so this method should take full responsibility to instantiate those objects for us.
 # so after our class definition, we only go ahead and call this method
@@ -263,4 +290,7 @@ print(phone.all)
 
 # there is a problem. because as we can see for each of the child classes that we will create in the future to extend this project, we are going to need to do this in this with_explanation.py file. because this is the only file that we are working with. and when our project grows, we need to start working with multiple files. and that is why we will use different files when working with parent class and child class. so that's why we will have this file dedicated for only creating instances on our parent class.
 
-# and then in this file with_explanation file we can basically use this file to only instantiate instances, meaning creating data that will represent something to python. it means we can just import the class from the Item file, we can do the same with the phone file and then we can go ahead and do the stuff that we used to do. but we are not going to these things in this file because we need the file to be empty which i cant do to this file because i have important explanation here. so i will do these in the without_explain_fresh.py file.
+# and then in this file with_explanation file we can basically use this file to only instantiate instances, meaning creating data that will represent something to python. it means we can just import the class from the Item file, we can do the same with the phone file and then we can go ahead and do the stuff that we used to do. but we are not going to these things in this file because we need the file to be empty which i cant do to this file because i have important explanation here. so i will do these in the main.py file.
+
+
+# now we still might be curious about how to set a new value for the name attribute. there are some decorator that will allow me to for this property of name. so what we can do is, use a new method, where we can declare that we like to also set a new value for this attribute.

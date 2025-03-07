@@ -11,13 +11,34 @@ class Item:
         assert quantity >= 0, f"quantity{quantity} is less than zero"
         
         # assign to self object.
-        self.name = name
+        self.__name = name # for read only functionality
         self.price = price
         self.quantity = quantity
 
 
         # actions to execute
         Item.all.append(self)
+
+
+
+# for having read only in name.
+    @property # getter. used for getting a value 
+    
+    # property decorator = read only attribute
+    def name(self):
+        '''print('you are trying to get a value')'''
+        return self.__name
+    
+
+
+    @name.setter # setter. to set the value.
+    def name(self, value):
+        if len(value) > 10:
+            raise Exception ('the name is too long')
+        else:
+            '''print('trying to set')'''
+            self.__name = value
+
 
 
     def calculate_total_price(self):  
@@ -58,6 +79,14 @@ class Item:
     
     def __repr__(self):
         return f"{self.__class__.__name__}('{self.name}','{self.price}', {self.quantity})"
+    
+
+
+    '''
+    @property
+    def read_only_name(self): # for giving static value
+        return 'aaa'
+    '''
 
 
 
