@@ -30,7 +30,7 @@ class Item:
 
         # assign to self object.
         self.__name = name # for read only functionality
-        self.price = price
+        self.__price = price
         self.quantity = quantity
 
         # actions to execute
@@ -73,6 +73,14 @@ notes when working with classes.
 
 
 
+    @property
+    def price(self):
+        return self.__price
+
+
+    def apply_increment(self, increment_value):
+        self.__price = self.__price + self.__price * increment_value
+
 
     def calculate_total_price(self):
         # calculate_total_price(self, x, y):
@@ -80,11 +88,11 @@ notes when working with classes.
         # we are gonna multiply price and quantity.        
         # now if i call this method: at line 25
         # return x * y  
-        return self.price * self.quantity  
+        return self.__priceprice * self.quantity  
 
 # now lets create a method to apply the discount.
     def apply_discount(self):
-        self.price = self.price * self.pay_rate
+        self.__price = self.price * self.pay_rate
 
 # now if we need to specify a specific discount rate for a specific item then we need to assign the attributes directly to the instances that i would like to have a different discount amount.
 
@@ -134,6 +142,30 @@ notes when working with classes.
 # now what we could use here, instead of hard coding the name of the class in the __repr__ method inside the Item class, we could access the name of the class generically. for that we have a special magic attribute, which is a generic way to access the name of the class from the instance. and by doing this, i recieve the name of the class that i initialize from the beginning 
     def __repr__(self):
         return f"{self.__class__.__name__}('{self.name}','{self.price}', {self.quantity})"
+    
+
+
+    #                        ABSTRACTION
+
+    def __connect(self, smtp_sever):
+        pass
+
+
+    def __prepare_body(self):
+        return f'''
+        heloo, what's up!
+        we have {self.name} {self.quantity} times.
+        '''
+    
+
+    def __send(self):
+        pass
+
+
+    def send_email(self):
+        self.__connect()
+        self.__prepare_body()
+        self.__send()
     
 
 
@@ -276,13 +308,13 @@ class phone(Item):
 
 
 phone1 = phone('jscphonev10', 500, 5, 1)
-print(phone1.calculate_total_price())
+'''print(phone1.calculate_total_price())'''
 
 phone2 = phone('jscphonev20', 700, 5, 1)
 
 
-print(Item.all)
-print(phone.all)
+'''print(Item.all)'''
+'''print(phone.all)'''
 
 # here, we have created two instances of a phone. also the two items here are also phones. so we could think about some attributes that could represent phone in real life. for example, broken phone. so after creating those attribute. now the next thing is to creating a method that would go ahead and calculate the phones that are not broken, meaning subtracting the quantity by the broken phones amount. 
 # now we could go ahead and create a seperate class that will inherit the functionalities that the 'Inheritancing' class will brings with it. so now we will create a seperate class called phone and then this phone class will inherit all the methods and all the attribute that 'Inheritancing' class has. 
@@ -294,3 +326,29 @@ print(phone.all)
 
 
 # now we still might be curious about how to set a new value for the name attribute. there are some decorator that will allow me to for this property of name. so what we can do is, use a new method, where we can declare that we like to also set a new value for this attribute.
+
+# object oriented programming comes with 4 key principles. so that i could understand how i can design my large programs.
+
+'''
+1. ENCAPSULATION.
+encapsulation refers to a mechanism of restricting the direct access to some of our attributes in a program. so restricting the ability to overwrite the value for my objects within my saddle.
+
+2. ABSTRACTION.
+abstraction is the concept of object oriented programming that only shows the necessary attributes and hides the unnecessary information. the main purpose of abstraction is basically hiding unnecessary details from the users. now by users, i mean, people like or others who are going to use the item class to create some item object.
+
+the abstraction principle says to you that you should hide unnecessary information from the instances. so thay is why by converting those methods into private methods, then we actually apply the abstraction principles. and that is achievable in python in a way that is by adding double underscore __ in the method name. by doing that those mehods can only be called from the class level, meaning insede the class.
+if we want to make the methods accessible or not outside the class meaning from the instances then we will think about abstraction.
+
+3. INHERITANCE.
+we already know it .
+
+4. POLYMORPHISM.
+polymorphism refers to use of a single type entity to represent different types in different scenarios. polymorphism refers to many form, poly means many and morphism means form. the idea of applying polymorphism on our program is the ability to have different scenarios when we call the exact smae entity and an entity could be an function that we just call. polymorphism isn't something that is specifically applied to how you create your classes, rather it is something that refers globally to my entire project. 
+'''
+
+
+# POLYMORPHISM
+
+# a great example of where polymorphism is applied, is in the len built-in functions. because the len built in function in python knows how to handle different kinds of objects that it receives as an argument, and it returns me a result accordingly.
+# as the definition of polymorphism says, it is just a single entity that does know how to handle different kinds of objects.
+# another example of polymorphism is in the inheritance. there one method can be used by all child classes and can get different values depending on the attributes. 

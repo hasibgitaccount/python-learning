@@ -13,7 +13,7 @@ class Item:
         
         # assign to self object.
         self.__name = name # for read only functionality
-        self.price = price
+        self.__price = price
         self.quantity = quantity
 
 
@@ -21,6 +21,7 @@ class Item:
         Item.all.append(self)
 
 
+#                       ENCAPSULATION
 
 # for having read only in name.
     @property # getter. used for getting a value 
@@ -40,13 +41,22 @@ class Item:
             self.__name = value
 
 
+    @property
+    def price(self):
+        return self.__price
+
+
+    def apply_increment(self, increment_value):
+        self.__price = self.__price + self.__price * increment_value
+
+
     def calculate_total_price(self):  
-        return self.price * self.quantity 
+        return self.__price * self.quantity 
 
 
     # now lets create a method to apply the discount.
     def apply_discount(self):
-        self.price = self.price * self.pay_rate
+        self.__price = self.__price * self.pay_rate
 
 
     @classmethod
@@ -78,9 +88,30 @@ class Item:
     
     def __repr__(self):
         return f"{self.__class__.__name__}('{self.name}','{self.price}', {self.quantity})"
+    
+
+#                        ABSTRACTION
+
+    def __connect(self, smtp_sever):
+        pass
+
+
+    def __prepare_body(self):
+        return f'''
+        heloo, what's up!
+        we have {self.name} {self.quantity} times.
+        '''
+    
+
+    def __send(self):
+        pass
+
+
+    def send_email(self):
+        self.__connect()
+        self.__prepare_body()
+        self.__send()
 
 
 
-    '''@property
-    def read_only_name(self): # for static value
-        return "aaa" '''
+

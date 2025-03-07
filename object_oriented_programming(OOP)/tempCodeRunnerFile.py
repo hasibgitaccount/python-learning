@@ -1,1 +1,0 @@
-print(item1.read_only_name)
