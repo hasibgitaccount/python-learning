@@ -84,3 +84,14 @@ item5 = Item('keyboard', 75 , 5)'''
 
 for instance in Item.all:
     print(instance.name)'''
+
+
+# INHERITANCE
+
+class Inheritancing:...
+
+phone1 = Inheritancing('jscphonev10', 500, 5)
+phone1.broken_phones = 1
+
+phone2 = Inheritancing('jscphonev20', 700, 5)
+phone2.broken_phones = 1

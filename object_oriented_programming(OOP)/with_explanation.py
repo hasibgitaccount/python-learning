@@ -184,6 +184,7 @@ print(item2.calculate_total_price())'''
 # a class attribute is an attribute that is going to be belong to the class itself. however, i can also access this attribute from the instance level as well.
 
 # i will try to access to the reference of the class itself. so im not going to create an instance. besides im just going to bring in the reference to the class level itself. then im going to access this class attribute.
+
 '''print(Item.pay_rate)'''
 
 # we can also access those class attributes from the instance level.
@@ -218,4 +219,14 @@ for instance in Item.all:
 # static method.
 # a static method should do some work for you that has some logical connections to a class. for example if i want to check if a number is a integer or float then static method is a good candidate. because this has some connections to the class that we work with.
 
-# CLASS METHOD vs STATIC METHOD
+# INHERITANCE
+
+class Inheritancing:...
+
+phone1 = Inheritancing('jscphonev10', 500, 5)
+phone1.broken_phones = 1
+
+phone2 = Inheritancing('jscphonev20', 700, 5)
+phone2.broken_phones = 1
+# here, we have created two instances of a phone. also the two items here are also phones. so we could think about some attributes that could represent phone in real life. for example, broken phone. so after creating those attribute. now the next thing is to creating a method that would go ahead and calculate the phones that are not broken, meaning subtracting the quantity by the broken phones amount. 
+# now we could go ahead and create a seperate class that will inherit the functionalities that the 'Inheritancing' class will brings with it. so now we will create a seperate class called phone and then this phone class will inherit all the methods and all the attribute that 'Inheritancing' class has. 
