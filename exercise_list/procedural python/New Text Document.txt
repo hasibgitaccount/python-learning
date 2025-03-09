@@ -1,0 +1,128 @@
+Here’s an ultimate list of procedural Python exercises that will solidify your foundation in procedural programming while keeping your machine learning journey in mind. These exercises focus on core concepts that will directly or indirectly support your ML journey.
+
+Part 1: Strong Basics of Procedural Python
+
+1. Basic Syntax and Variables
+
+Write a Python script that takes two numbers as input and prints their sum, difference, multiplication, and division.
+Create a program that asks the user for their name and age and prints a personalized greeting.
+
+2. Data Types and Type Conversion
+
+Write a program that takes user input for a decimal number, converts it to an integer, and prints the integer.
+Create a program that converts a string of comma-separated numbers into a list of integers.
+
+3. Control Flow
+
+Write a function that accepts a number and checks whether it’s positive, negative, or zero.
+Implement a program that checks if a year is a leap year.
+
+4. Loops
+
+Create a function that takes a list of numbers and returns the sum of all numbers.
+Write a program that generates a multiplication table for a given number using loops.
+Write a program that prints all prime numbers between 1 and 100.
+
+5. Functions
+
+Create a function that calculates the factorial of a number.
+Write a function that computes the Fibonacci sequence up to the nth term.
+Write a function to find the maximum and minimum number from a given list.
+
+6. Lists and Tuples
+
+Write a function that takes a list of numbers and returns a new list with only even numbers.
+Write a program to find the most frequent element in a list of numbers.
+Write a program that combines two lists into a dictionary (list elements as keys, index as values).
+
+7. Dictionaries
+
+Write a function that accepts a dictionary with student names as keys and scores as values. Return the student(s) with the highest score.
+Write a program that counts the frequency of each character in a string and returns it as a dictionary.
+
+Part 2: Intermediate Procedural Python Concepts Related to ML
+
+8. File I/O
+
+Write a program that reads data from a CSV file and prints the contents.
+Implement a function that writes a list of dictionaries to a CSV file, each representing a row.
+
+9. Handling Exceptions
+
+Write a function that reads an integer from the user and raises an exception if the input is not a valid integer.
+Create a program that handles division by zero errors gracefully.
+
+10. Sorting Algorithms
+
+Implement the bubble sort and selection sort algorithms.
+Create a function that sorts a list of dictionaries by a specific key (e.g., sort students by grades).
+
+11. Recursion
+Implement a recursive function to calculate the factorial of a number.
+Write a recursive function to reverse a string.
+
+12. String Manipulation
+Write a program that counts how many times a specific word appears in a given text file.
+Implement a function to clean a string of punctuation marks and return the cleaned version.
+
+13. Working with Time and Dates
+Write a program that calculates the number of days between two dates.
+Create a function that formats a date string into YYYY-MM-DD format.
+
+14. Lambda Functions and Map/Filter
+Write a lambda function that filters out all numbers less than 10 from a list of integers.
+Use map() to square all numbers in a list.
+Write a program that applies a lambda function to calculate the cube of each number in a list.
+
+Part 3: Advanced Procedural Python Concepts for ML
+
+15. Algorithms and ML Data Structures
+Write a program to implement a basic linear search algorithm and apply it to find an element in a list.
+Create a function to implement binary search on a sorted list of numbers.
+Write a program that implements the basic version of the k-nearest neighbors (k-NN) algorithm (just calculate distances and find nearest neighbors).
+
+16. Data Preprocessing Utilities
+Create a program that normalizes a list of numbers (scaling to a range between 0 and 1).
+Write a function that takes a list of numerical data and removes any outliers (values more than 1.5 * IQR above Q3 or below Q1).
+
+17. Data Visualization Utilities
+Write a function that plots the relationship between two variables using matplotlib or seaborn (scatter plot).
+Create a program that plots the distribution of a dataset (histogram).
+Write a program to plot a confusion matrix for a classification problem (use dummy data).
+
+18. Matrix Operations (NumPy)
+Write a program to perform matrix addition and subtraction.
+Create a function that multiplies two matrices.
+Implement a function to calculate the determinant of a matrix.
+
+19. Custom ML Metric Implementations
+Write a function that calculates the Mean Squared Error (MSE) given two lists (predictions and true values).
+Create a program that calculates accuracy from a list of predictions and true values.
+
+20. Data Pipeline Simulation
+Write a program that simulates a simple ML pipeline (data loading, preprocessing, training, and evaluation).
+Create a function that splits a dataset into training and test sets randomly.
+
+21. Model Persistence
+Write a function to save a trained model to a file using pickle or joblib.
+Implement a program that loads a saved model from a file and makes predictions on new data.
+
+Final Part: Procedural Python with ML Application
+
+22. Project: Machine Learning Workflow Automation
+Write a procedural Python script that loads a dataset (e.g., CSV or from an API), cleans it (handles missing values, normalization), splits it into training and testing sets, trains a simple machine learning model (like a linear regression), and evaluates the model’s performance (e.g., using MSE or accuracy).
+Extend the above project to allow it to save the trained model and load it for future predictions.
+
+Why These Exercises Matter for Your ML Journey:
+
+=> Data Preprocessing: A major part of machine learning is preparing the data. Procedural Python will help you write custom data preprocessing functions, which is essential for cleaning and transforming data before feeding it into models.
+
+=> Basic Algorithms & Search: Understanding basic search algorithms like binary and linear search helps when you're working with large datasets and need efficient ways to handle them.
+
+=> Custom Metrics & Evaluation: You will need to create custom metrics (like MSE or accuracy) to evaluate models, especially when the predefined metrics in libraries are insufficient or you are developing your own algorithms.
+
+=> Model Persistence: In ML, saving and loading models is crucial when deploying them in production. Learning how to implement this functionality ensures you can easily save trained models and reuse them.
+
+=> Data Visualization: Data visualization is essential in machine learning for both exploratory data analysis (EDA) and model evaluation. You will need to visualize data distributions, relationships between features, and model performance metrics.
+
+By completing these exercises, you will have a solid procedural Python foundation that will directly apply to machine learning tasks such as data processing, algorithm implementation, and model evaluation.
