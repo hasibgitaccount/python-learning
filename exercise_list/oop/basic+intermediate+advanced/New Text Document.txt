@@ -1,0 +1,83 @@
+Part 1: Strong Basics (Foundation)
+1. Class Basics and Initialization:
+
+Create a Person class with attributes like name, age, and gender. Include methods to check if the person is an adult.
+
+2. Inheritance:
+
+Create an Employee subclass with attributes for salary and a method to calculate yearly salary.
+Create a Vehicle class and a Car subclass that adds attributes like num_doors.
+
+3. Encapsulation:
+
+Create a BankAccount class with private attributes for balance, and methods for deposit/withdrawal and checking balance.
+Implement basic getter and setter methods for encapsulation.
+
+4. Polymorphism:
+
+Implement method overriding in a Shape class. Create subclasses like Circle, Square, and Triangle that calculate area differently.
+
+5. Dunder Methods (Magic Methods):
+
+Implement __repr__() and __eq__() methods for string representation and comparison between Person objects.
+
+6. File Handling:
+
+Write methods to save and load object data (like a BankAccount class) to/from a file.
+
+7. Exception Handling:
+
+Handle exceptions like insufficient balance when withdrawing from a BankAccount class.
+
+Part 2: Strong Intermediate (Real-World OOP Practices)
+
+1. Class Methods and Static Methods:
+
+Implement a class method to create an Account in a banking system.
+Use a static method to validate an account number format.
+
+2. Abstract Classes and Interfaces:
+
+Create an abstract class Shape with an abstract method draw() and implement this method in subclasses (Circle, Rectangle).
+
+3. Method Overloading:
+
+Implement method overloading in a class like Person where the greet() method can handle different parameters (like a greeting based on time of day).
+
+4. Composition:
+
+Create Library and Book classes where a Library has many Books and can check if a book is available for borrowing.
+
+5. Multiple Inheritance:
+
+Create a Person class and a Job class, then combine them into a Worker class that inherits from both.
+
+6. Singleton Pattern (Relevance for ML):
+
+Implement the Singleton pattern to ensure only one instance of a class like DatabaseConnection is created.
+
+7. Strategy Pattern (ML Relevance):
+
+Implement a PaymentStrategy interface with different payment methods (like credit card and PayPal). In ML, this can relate to various model selection strategies.
+
+Part 3: Advanced (Advanced OOP for ML Projects)
+
+1. Factory Pattern (ML Relevance):
+
+Implement a ShapeFactory class that returns shapes (like Circle, Square, etc.) based on user input. This concept can be applied to dynamically select different ML models in your projects.
+
+2. Observer Pattern (ML Relevance):
+
+Implement a WeatherStation class (subject) with observers like MobileApp and TVStation. This pattern can be useful in real-time ML systems, such as model monitoring.
+
+3. Unit Testing and Testing Libraries:
+
+Learn unit testing for your classes (use unittest or pytest) and write tests for various OOP implementations like BankAccount or Person.
+
+4. SOLID Principles (ML Relevance):
+
+Apply SOLID principles to your codebase. For example, in a Model class for ML, ensure it follows the Single Responsibility Principle by keeping model training separate from evaluation.
+
+5. Design Patterns in Machine Learning:
+
+Learn how design patterns like Singleton, Factory, and Observer can be used for managing model training, evaluation, and deployment.
