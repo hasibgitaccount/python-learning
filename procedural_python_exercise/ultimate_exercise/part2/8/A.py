@@ -4,7 +4,7 @@
 
 import csv
 
-file_name = 'your_file.csv'
+file_name = 'procedural_python_exercise/ultimate_exercise/part2/8/A.csv'
 
 try:
     with open(file_name, mode= 'r') as csv_file:
