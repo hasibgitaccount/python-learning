@@ -1,0 +1,18 @@
+🎨 Simple Visual Example
+List: [4, 2, 5, 1]
+Selection Sort
+
+1. Find 1 → swap with 4 → [1, 2, 5, 4]
+2. Find 2 → it's fine
+3. Find 4 → swap with 5 → [1, 2, 4, 5]
+✔️ Done.
+Bubble Sort
+
+1. Compare 4 & 2 → swap → [2, 4, 5, 1]
+2. Compare 4 & 5 → fine
+3. Compare 5 & 1 → swap → [2, 4, 1, 5]
+Next pass...
+4. 2 & 4 → fine
+5. 4 & 1 → swap → [2, 1, 4, 5]
+And so on...
+✔️ Takes more passes.
