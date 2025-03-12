@@ -17,7 +17,34 @@ Step 2: Portfolio Website
 => Actions:
 	=> Host your website on WordPress (as you mentioned, it's your platform of choice).
 	=> Include sections like about me, projects, contact, and skills.
-	=> Link to your GitHub, LinkedIn, and any other platforms you use.
+	=> Link to your GitHub, LinkedIn, and any other platforms you use like kaggele, Medium / Hashnode / DEV.to (choose one for writing),
+	✅ 1. GitHub (a must-have)
+	=> Why? It shows your code quality, project structure, and commitment. Recruiters always check GitHub.
+	=> Tip: Pin 5–6 of your best projects (clean, documented, and relevant to the job you're targeting).
+	✅ 2. LinkedIn (also essential)
+	=> Why? For networking, endorsements, and recruiters. Many recruiters find candidates directly on LinkedIn.
+	=> Tip: Write clear headlines like "Aspiring Machine Learning Engineer | Python Developer" and post about your projects or things you’re learning.
+	✅ 3. Kaggle
+	=> Why? It’s the platform for data science and machine learning. Even having a few kernels (notebooks) with your ML work looks good.
+	=> How to use it: Join competitions, create notebooks explaining your ML projects, or share exploratory data analysis (EDA).
+	=> Bonus: Kaggle ranks and medals are eye-catching!
+	✅ 4. Medium / Hashnode / DEV.to (choose one for writing)
+	=> Why? Writing technical blogs shows you understand what you build and can explain complex stuff simply.
+	=> What to write about?
+	=> Tutorials (e.g., "Beginner's Guide to Pandas")
+	=> Project walkthroughs (e.g., "How I Built a Movie Recommendation System")
+	=> Learnings (e.g., "5 Things I Learned Doing My First Machine Learning Project")
+	=> Tip: Medium has better reach; Hashnode or DEV.to are easier to start with and free
+	✅ 5. LeetCode / HackerRank / Codewars (optional, but helps)
+	=> Why? If you’re targeting roles that need coding interviews, having a profile with good rankings or badges helps.
+	=> Link if: You’ve solved 100+ problems or earned some ranks/badges.
+	✅ 6. Personal Projects / App Demos
+	=> How? Host your projects:
+	=> On Streamlit Cloud or Hugging Face Spaces (for ML web apps)
+	=> On Netlify or Vercel (if you build full websites or dashboards)
+	=> Why? Showing live demos alongside GitHub code makes a strong impression.
+	✅ 7. Google Scholar / ResearchGate (if you have papers)
+	=> Only if you’re into academic ML or published research. Otherwise, skip!.
 	=> Showcase your best machine learning projects with clear descriptions and code walkthroughs.
 	=> Include your CV or a downloadable version on your site.
 2. Networking & Community Engagement
