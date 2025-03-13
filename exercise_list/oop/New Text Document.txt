@@ -43,7 +43,7 @@ A. Create an abstract class Shape with an abstract method draw() and implement t
 
 3. Method Overloading:
 
-A. Implement method overloading in a class like Person where the greet() method can handle different parameters (like a greeting based on time of day).
+A. Implement method overloading in a class like Person where the greet() method can handle different parameters (like a greeting based on time of day).(skip for now).
 
 4. Composition:
 
@@ -51,7 +51,7 @@ A. Create Library and Book classes where a Library has many Books and can check 
 
 5. Multiple Inheritance:
 
-A. Create a Person class and a Job class, then combine them into a Worker class that inherits from both.
+A. Create a Person class and a Job class, then combine them into a Worker class that inherits from both.(skip for now).
 
 6. Singleton Pattern (Relevance for ML):
 
@@ -69,7 +69,7 @@ A. Implement a ShapeFactory class that returns shapes (like Circle, Square, etc.
 
 2. Observer Pattern (ML Relevance):
 
-A. Implement a WeatherStation class (subject) with observers like MobileApp and TVStation. This pattern can be useful in real-time ML systems, such as model monitoring.
+A. Implement a WeatherStation class (subject) with observers like MobileApp and TVStation. This pattern can be useful in real-time ML systems, such as model monitoring.(skip for now).
 
 3. Unit Testing and Testing Libraries:
 
