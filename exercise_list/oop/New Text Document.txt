@@ -65,7 +65,7 @@ Part 3: Advanced (Advanced OOP for ML Projects)
 
 1. Factory Pattern (ML Relevance):
 
-A. Implement a ShapeFactory class that returns shapes (like Circle, Square, etc.) based on user input. This concept can be applied to dynamically select different ML models in your projects.
+A. Implement a ShapeFactory class that returns shapes (like Circle, Square, etc.) based on user input. This concept can be applied to dynamically select different ML models in your projects.(skip for now).
 
 2. Observer Pattern (ML Relevance):
 
@@ -81,4 +81,4 @@ A. Apply SOLID principles to your codebase. For example, in a Model class for ML
 
 5. Design Patterns in Machine Learning:
 
-A. Learn how design patterns like Singleton, Factory, and Observer can be used for managing model training, evaluation, and deployment.
+A. Learn how design patterns like Singleton, Factory, and Observer can be used for managing model training, evaluation, and deployment.(skip for now).
