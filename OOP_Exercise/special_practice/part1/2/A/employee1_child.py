@@ -1,6 +1,6 @@
 import csv
 
-from A_parent import Person
+from .person_parent import Person
 
 class Employee_1(Person):
 

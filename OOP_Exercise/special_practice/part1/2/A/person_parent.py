@@ -14,7 +14,7 @@ class Person:
     @classmethod
     def attributes_from_csv(cls):
         employees = []
-        with open('OOP_Exercise/special_practice/part1/2/A.csv', mode= 'r') as csv_file:
+        with open('OOP_Exercise/special_practice/part1/2/A/a.csv', mode= 'r') as csv_file:
             reader = csv.reader(csv_file)
 
             for i in reader:

@@ -1,4 +1,4 @@
-from A_child import  Employee_1
+from A import  Employee_1
 
 employee = Employee_1.attributes_from_csv()
 
