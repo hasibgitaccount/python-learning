@@ -1,6 +1,6 @@
 from B import Car
 
-my_car = Car("Toyota", "Corolla", 4)
+cars = Car.load_from_csv('OOP_Exercise/special_practice/part1/2/B/b.csv')
 
-# No need to call display_info()
-print(my_car)
+for i in cars:
+    print(i)
