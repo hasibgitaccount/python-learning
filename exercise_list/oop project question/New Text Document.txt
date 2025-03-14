@@ -1,0 +1,61 @@
+📚 Library Management System (OOP Project)
+
+Why this project?
+=> Covers Classes, Inheritance, Composition, File Handling, Encapsulation, Polymorphism, Exception Handling—everything you’ve learned.
+=> It’s real-world but simple enough to finish fast.
+=> Sets you up for thinking in data structures, which helps in NumPy/Pandas later.
+
+✅ Core Features You Must Build (No Extra Fluff):
+
+1. Entities (Classes)
+
+=> Book
+=> Member
+=> Library
+
+2. Book Class
+
+=> Attributes: title, author, isbn, available (True/False)
+
+=> Methods:
+	=> __str__() ➡ for printing info
+	=> mark_as_borrowed()
+	=> mark_as_returned()
+
+3. Member Class
+
+=> Attributes: member_id, name, borrowed_books (list)
+
+=> Methods:
+	=> borrow_book(book)
+	=> return_book(book)
+	=> __str__() ➡ for member info
+
+4. Library Class
+
+=> Attributes:
+	=> books ➡ list of Book objects
+	=> members ➡ list of Member objects
+
+=> Methods:
+	=> add_book(book)
+	=> add_member(member)
+	=> borrow_book(member_id, isbn)
+	=> return_book(member_id, isbn)
+	=> show_available_books()
+	=> save_data() ➡ writes current books & members to file
+	=> load_data() ➡ reads books & members from file
+
+5. Extra (Optional but Recommended):
+
+=> Exception Handling
+	=> Raise error if someone tries to borrow an unavailable book
+	=> Raise error if the member ID is invalid
+=> File Handling
+	=> Store book/member data in a .txt or .json file
+
+🏁 Project Completion Goal
+
+=> Finish in 3-5 days (max)
+=> Clean code: follow Encapsulation & SRP (Single Responsibility Principle)
+=> No extra features until core is working!
